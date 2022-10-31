@@ -28,7 +28,7 @@ namespace MovieApp.Models
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$", ErrorMessage = "Must Include alphabhets, numbers and special characters")]
         [Required]
-        [StringLength(5)]
+        [StringLength(15)]
         public string? Rating { get; set; }
     }
 }
