@@ -4,6 +4,9 @@
     ViewData["Title"] = "Delete";
 }
 
+<form asp-action="Delete" asp-area="Movies" method="post">
+    <input type="hidden" asp-for="Id" />
+
 <h1>Delete Movie</h1>
 
 <h3>Are you sure you want to delete this?</h3>
@@ -43,6 +46,8 @@
         </dd>
     </dl>
 
+   
+
     <div class="card-footer">
         <button type="submit" class="btn btn-danger">Delete Movie</button>
         <a asp-action="Index" asp-controller="Movies" class="btn btn-secondary">Cancel</a>
@@ -53,4 +58,7 @@
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>*@
+
 </div>
+</form>
+

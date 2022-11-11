@@ -29,9 +29,7 @@ namespace MovieApp.Controllers
                                             orderby m.Genre
                                             select m.Genre;
 
-            //var movies = from m in _context.Movie
-            //             select m;
-
+            
             var movies = _context.Movie.Select(m => m);
 
             if (!String.IsNullOrEmpty(searchString))
@@ -168,16 +166,9 @@ namespace MovieApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Movie == null)
-            {
-                return Problem("Entity set 'MovieAppContext.Movie'  is null.");
-            }
+          
             var movie = await _context.Movie.FindAsync(id);
-            if (movie != null)
-            {
-                _context.Movie.Remove(movie);
-            }
-            
+            _context.Movie.Remove(movie);   
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
